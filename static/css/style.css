@@ -1,0 +1,152 @@
+html,
+body {
+   height: fit-content;
+}
+.content {
+    max-width:900px;
+    height: 100%;
+    margin: 0 auto;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+.post_form {
+    display: flex;
+    padding: 20px 40px;
+    border-bottom: 1px solid #ccc;
+    width:auto;
+}
+.post_form input {
+    width: 70%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+/*.post_form textarea {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #E6FEF7;
+}*/
+.posts ul {
+    padding: 0;
+}
+.posts li {
+    position: relative;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 40px;
+    list-style: none;
+}
+.posts li .logo {
+    flex-basis: 15%;
+}
+.posts li .logo img {
+    width: 60%;
+}
+.posts li .name_body {
+    flex-basis: 85%;
+}
+.posts li .name_body .name {
+    font-weight: bold;
+}
+.posts li .name_body .datetime {
+    color: gray;
+}
+@media screen and (max-width: 500px) {
+    .posts li .name_body .name {
+        font-size: 20px;
+    }
+}
+.posts li .menu_icon {
+    width: 20px;
+    position: absolute;
+    right: 30px;
+    top: 18px;
+}
+.posts li .menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 15px;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 3px;
+}
+.posts li .menu a {
+    text-decoration: none;
+}
+img .twitterlog {
+    width: 10%;
+}
+.logodiv {
+    display: flex;
+    padding-left: 6%;
+    gap: 3%;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 2%;
+}
+input[type=“submit”] {
+    width: 22%;
+    background-color: #00ADEF;
+    border-radius: 3px;
+    color: white;
+    font-weight: 600;
+    font-size: large;
+}
+button {
+    background-color: #00ADEF;
+    width: 20%;
+    padding: 2%;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: 600;
+    font-size: large;
+}
+button.like-button {
+    color: red;
+}
+img.post-image {
+    height: 50vh;
+    border-radius: 15px;
+}
+.post_form textarea {
+    width: 70%;
+    padding: 10px;
+   
+    background-color: #E6FEF7;
+}
+textarea {
+    background-color: #E6FEF7;
+}
+input[type="text"] {
+    margin-left: 35%;
+    width: 70%;
+    position: relative;
+    right: 35%;
+    background-color: #E6FEF7;
+}
+
+.logodiv {
+    display: flex;
+}
+
+.logodiv img {
+    width: 10%;
+}
+#tweetb{
+    
+    position: relative;
+    left: 84%;
+    width: 40%;
+    top: 2;
+    bottom: 23%;
+    color: white;
+    background-color: #5ec6ec;
+}
+#cancelb{
+    position: relative;
+    bottom: 2%;
+}

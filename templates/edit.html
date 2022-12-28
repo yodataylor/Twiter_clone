@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+
+
+<section class="content">
+    <div class="logodiv">
+        <img src="{% static 'img/OIP.jpg' %}" alt="" >
+        <h1>Edit</h1>
+    </div>
+    <section class="post_form">
+        <form action="/edit/{{post.id}}/" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" name="name" value="{{ post.name }}" required />
+            <input type="text" name="body" value="{{ post.body }}" >
+            <input type="file" name="image">
+            {% if post.image.url %} 
+            <img src="{{ post.image.url }}" class="post-image" alt="" width="100%" >
+            {% endif %}
+
+            <div class="butns">
+                <input class = "upload-file" type="file" value="Choose File" name="image"><br>
+                
+                <button class="update" type="submit">Update</button>
+                <button class="cancel"><a href="/"  type="submit">Cancel</a></button>
+            </div>
+        </form>
+    </section>
+</section>
+
+{% endblock %}

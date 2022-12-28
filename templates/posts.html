@@ -1,0 +1,58 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<section class="content">
+  <div class = "logodiv">
+    <img src ="{% static 'img/OIP.jpg' %}" alt="" class = "twitterlog" />
+    <h1>Home</h1>
+  </div>
+  <section class="post_form">
+  <form action="" method="POST" enctype = "multipart/form-data">
+
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Enter your name" required /><br />
+    <textarea type = "text" name="body" placeholder="What's happening?" required></textarea>
+    <input type = "file" name ="image">
+    <input type="submit" name ="" id="tweetb" value="Tweet" />
+  </form>
+</section>
+  <section class="posts">
+    <ul>
+      {% for post in posts %}
+      <li>
+        
+          <img class ="menu_icon js-menu-icon" src="{% static 'img/menu.png' %}" />
+          <div class ="menu">
+            <a href="/delete/{{ post.id }}/">Delete</a><br>
+            <a href="/edit/{{ post.id }}/">Edit</a>
+        </div>
+        <div class="logo">
+          <img src="{% static 'img/icon.png' %}" />
+        </div>
+
+        <div class="name_body">
+          <div class="name">{{ post.name }}</div>
+          <div class="datetime">{{ post.created_at }}</div>
+          <p>{{ post.body }}</p><br>
+
+          {% if post.image.url %}
+          <img class ="post-image" src="{{ post.image.url }}" width ="80%" alt="">
+          {% endif %}
+
+          <form action = "{% url 'like' post.pk %}" method = "POST" id= "likes-form">
+            {% csrf_token %}
+            <div class ="row">
+              <button class = "like-button" type="submit" , name="post_id", value="{{post.id}}"> &#10084;</button> {{post.likes}}
+          
+        </div>
+      </form>
+    </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  <script
+  src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script>
+  <script src="{% static 'js/post.js' %}"></script>
+</section>
+{% endblock %}
